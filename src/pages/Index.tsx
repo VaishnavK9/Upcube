@@ -12,7 +12,7 @@ const Index = () => {
 
   return (
     <>
-      <div className="min-h-screen bg-gradient-to-br from-blue-50 to-purple-50 dark:from-gray-900 dark:to-gray-800 flex flex-col">
+      <div className="min-h-screen bg-gradient-to-br from-blue-50 to-purple-50 dark:from-gray-900 dark:to-gray-800 flex flex-col pt-20">
 
         <Navbar />
 
@@ -40,6 +40,11 @@ const Index = () => {
                 >
                   Get Started
                 </Button>
+                <Link to="/project-knowledge">
+                  <Button variant="outline" size="lg" className="px-8 py-4 text-lg">
+                    Learn More
+                  </Button>
+                </Link>
               </div>
             )}
           </div>
@@ -97,7 +102,7 @@ const Index = () => {
         <section className="w-full my-0 py-0 px-4 sm:px-8 md:px-12 lg:px-24">
           <div className="max-w-6xl mx-auto w-full grid md:grid-cols-4 gap-8 bg-white dark:bg-gray-800/80 rounded-2xl shadow-lg px-4 py-10 md:py-12 mb-14">
             <div className="text-center">
-              <div className="text-3xl font-bold gradient-text mb-2">6+</div>
+              <div className="text-3xl font-bold gradient-text mb-2">1000+</div>
               <div className="text-gray-600 dark:text-gray-400">Assessments Completed</div>
             </div>
             <div className="text-center">

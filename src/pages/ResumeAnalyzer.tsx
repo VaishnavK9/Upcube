@@ -256,7 +256,7 @@ const ResumeAnalyzer = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-purple-50 dark:from-gray-900 dark:to-gray-800 w-full">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-purple-50 dark:from-gray-900 dark:to-gray-800 w-full pt-20">
       <Navbar />
       <div className="py-8">
         <div className="max-w-3xl mx-auto px-4">

@@ -39,17 +39,22 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="bg-white dark:bg-gray-900 shadow-lg border-b border-gray-200 dark:border-gray-700 sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className={user ? "fixed top-0 left-0 right-0 z-50" : "fixed top-4 left-4 right-4 z-50"}>
+        <nav className={
+          user 
+            ? "bg-background border-b border-border shadow-sm"
+            : "bg-white/10 dark:bg-gray-900/20 backdrop-blur-md shadow-lg border border-white/20 dark:border-gray-700/30 rounded-2xl max-w-7xl mx-auto"
+        }>
+          <div className="px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             {/* Logo */}
             <div className="flex items-center flex-shrink-0">
               <Link to="/" className="flex items-center space-x-2">
                 <div className="w-8 h-8 gradient-bg rounded-lg flex items-center justify-center">
-                  <span className="text-white font-bold text-sm">UC</span>
+                  <span className="text-white font-bold text-sm">SP</span>
                 </div>
-                <span className="text-xl font-bold gradient-text hidden sm:block">Upcube</span>
-                <span className="text-lg font-bold gradient-text sm:hidden">UC</span>
+                <span className="text-xl font-bold gradient-text hidden sm:block">SkillPilot</span>
+                <span className="text-lg font-bold gradient-text sm:hidden">SP</span>
               </Link>
             </div>
 
@@ -60,11 +65,13 @@ const Navbar = () => {
                   <Link
                     key={link.to}
                     to={link.to}
-                    className={`px-2 md:px-3 py-2 rounded-md text-xs md:text-sm font-medium transition-colors whitespace-nowrap ${
-                      isActive(link.to)
-                        ? 'bg-primary text-white'
-                        : 'text-gray-700 dark:text-gray-300 hover:text-primary hover:bg-gray-100 dark:hover:bg-gray-800'
-                    }`}
+                     className={`px-2 md:px-3 py-2 rounded-md text-xs md:text-sm font-medium transition-colors whitespace-nowrap ${
+                       isActive(link.to)
+                         ? 'bg-primary text-white'
+                         : user
+                           ? 'text-foreground hover:text-primary hover:bg-accent'
+                           : 'text-white/90 dark:text-white/90 hover:text-white hover:bg-white/20 dark:hover:bg-white/10'
+                     }`}
                   >
                     {link.label}
                   </Link>
@@ -77,13 +84,16 @@ const Navbar = () => {
               {/* Theme Toggle */}
               <button
                 onClick={toggleTheme}
-                className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+                className={user 
+                  ? "p-2 rounded-lg hover:bg-accent transition-colors"
+                  : "p-2 rounded-lg hover:bg-white/20 dark:hover:bg-white/10 transition-colors"
+                }
                 aria-label="Toggle theme"
               >
                 {theme === 'light' ? (
-                  <Moon className="w-4 h-4 md:w-5 md:h-5 text-gray-700 dark:text-gray-300" />
+                  <Moon className={user ? "w-4 h-4 md:w-5 md:h-5 text-foreground" : "w-4 h-4 md:w-5 md:h-5 text-white/90"} />
                 ) : (
-                  <Sun className="w-4 h-4 md:w-5 md:h-5 text-gray-700 dark:text-gray-300" />
+                  <Sun className={user ? "w-4 h-4 md:w-5 md:h-5 text-foreground" : "w-4 h-4 md:w-5 md:h-5 text-white/90"} />
                 )}
               </button>
 
@@ -116,9 +126,10 @@ const Navbar = () => {
                 </Button>
               )}
             </div>
+            </div>
           </div>
-        </div>
-      </nav>
+        </nav>
+      </div>
       <LoginModal open={showLoginModal} onClose={() => setShowLoginModal(false)} />
     </>
   );
