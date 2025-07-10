@@ -53,8 +53,8 @@ const Navbar = () => {
                 <div className="w-8 h-8 gradient-bg rounded-lg flex items-center justify-center">
                   <span className="text-white font-bold text-sm">SP</span>
                 </div>
-                <span className="text-xl font-bold gradient-text hidden sm:block">SkillPilot</span>
-                <span className="text-lg font-bold gradient-text sm:hidden">SP</span>
+                <span className="text-xl font-bold gradient-text hidden sm:block">Upcube</span>
+                <span className="text-lg font-bold gradient-text sm:hidden">UC</span>
               </Link>
             </div>
 
@@ -70,7 +70,7 @@ const Navbar = () => {
                          ? 'bg-primary text-white'
                          : user
                            ? 'text-foreground hover:text-primary hover:bg-accent'
-                           : 'text-white/90 dark:text-white/90 hover:text-white hover:bg-white/20 dark:hover:bg-white/10'
+                           : 'text-gray-900 dark:text-gray-200 hover:text-gray-700 hover:bg-white/20 dark:hover:bg-white/10 dark:hover:text-white'
                      }`}
                   >
                     {link.label}
