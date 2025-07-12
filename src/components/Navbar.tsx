@@ -51,7 +51,7 @@ const Navbar = () => {
             <div className="flex items-center flex-shrink-0">
               <Link to="/" className="flex items-center space-x-2">
                 <div className="w-8 h-8 gradient-bg rounded-lg flex items-center justify-center">
-                  <span className="text-white font-bold text-sm">SP</span>
+                  <span className="text-white font-bold text-sm">UC</span>
                 </div>
                 <span className="text-xl font-bold gradient-text hidden sm:block">Upcube</span>
                 <span className="text-lg font-bold gradient-text sm:hidden">UC</span>
